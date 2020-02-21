@@ -1,1 +1,53 @@
-<pre>{{ planets | json }}</pre>
+<ul *ngFor="let planet of planets">
+  <li>
+    <h4>
+      {{ planet.name }}
+    </h4>
+    <div>
+      <span>Population: {{ planet.population }}</span
+      ><br />
+      <span>Climate: {{ planet.climate }}</span
+      ><br />
+      <span>Diameter: {{ planet.diameter }}</span
+      ><br />
+      <span>Gravity: {{ planet.gravity }}</span
+      ><br />
+      <span>Orbital Period: {{ planet.orbital_period }}</span
+      ><br />
+      <span>Roatation Period: {{ planet.rotation_period }}</span
+      ><br />
+      <span>Surface Water: {{ planet.surface_water }}</span
+      ><br />
+      <span>Terrain: {{ planet.terrain }}</span
+      ><br />
+    </div>
+
+    <div>
+      Films:
+      <ul *ngFor="let film of planet.films">
+        <li>
+          <a href="{{ film }}">{{ film }}</a>
+        </li>
+      </ul>
+    </div>
+    <br />
+    <div>
+      Residents:
+      <ul *ngFor="let resident of planet.residents">
+        <li>
+          <a href="{{ resident }}">{{ resident }}</a>
+        </li>
+      </ul>
+    </div>
+    <br />
+
+    <div>
+      URL: <a href="{{ planet.url }}">{{ planet.url }}</a
+      ><br />
+      <span>Created: {{ planet.created | date }}</span>
+    </div>
+  </li>
+</ul>
+
+<!-- export interface Planets {  
+string; terrain: string; url: string; } -->

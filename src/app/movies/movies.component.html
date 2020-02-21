@@ -1,1 +1,17 @@
-<pre>{{ movies | json }}</pre>
+<ul *ngFor="let movie of movies">
+  <li>
+    <h4>Title: {{ movie.title }}</h4>
+    <article>{{ movie.opening_crawl }}</article>
+    <div style="margin-top: 0.250em">
+      <span>Director: {{ movie.director }}</span
+      ><br />
+      <span>Created: {{ movie.created | date }}</span>
+    </div>
+    <div>Characters:</div>
+    <ul *ngFor="let character of movie.characters">
+      <li>
+        <a href="{{ character }}"> {{ character }}</a>
+      </li>
+    </ul>
+  </li>
+</ul>

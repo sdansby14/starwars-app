@@ -1,6 +1,6 @@
 <ul *ngFor="let person of people">
   <li>
-    <h3>Name: {{ person.name }}</h3>
+    <h4>Name: {{ person.name }}</h4>
     <div>Height: {{ person.height }}</div>
     <div>Mass: {{ person.mass }}</div>
     <div>Hair Color: {{ person.hair_color }}</div>
@@ -8,7 +8,9 @@
     <div>Eye Color: {{ person.eye_color }}</div>
     <div>Birth Year: {{ person.birth_year }}</div>
     <div>Gender: {{ person.gender }}</div>
-    <div>Homeworld: {{ person.homeworld }}</div>
+    <div>
+      <a href="{{ person.homeworld }}"> Homeworld: {{ person.homeworld }}</a>
+    </div>
     <div>
       Films:
       <ul *ngFor="let film of person.films">
@@ -17,8 +19,10 @@
         </li>
       </ul>
     </div>
-    <div>Created: {{ person.created }}</div>
-    <div>Edited: {{ person.edited }}</div>
-    <div>Url: {{ person.url }}</div>
+    <div>Created: {{ person.created | date }}</div>
+    <div>Edited: {{ person.edited | date }}</div>
+    <div>
+      <a href="{{ person.url }}"> Url: {{ person.url }} </a>
+    </div>
   </li>
 </ul>
