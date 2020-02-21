@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Movies } from '../interfaces/Movies';
-import { MovieService } from '../services/movie.service';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-movies',
@@ -9,14 +9,14 @@ import { MovieService } from '../services/movie.service';
 })
 export class MoviesComponent implements OnInit {
   movies: Movies[];
-  constructor(private movieService: MovieService) {}
+  constructor(private apiService: ApiService) {}
 
   ngOnInit() {
     this.getMovies();
   }
 
   getMovies() {
-    this.movieService.all().subscribe((response: any) => {
+    this.apiService.all('films').subscribe((response: any) => {
       const allMovies: Movies[] = response.results;
       this.movies = allMovies;
     });

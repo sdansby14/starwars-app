@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Planets } from '../interfaces/Planets';
-import { PlanetsService } from '../services/planets.service';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-planets',
@@ -10,14 +10,14 @@ import { PlanetsService } from '../services/planets.service';
 export class PlanetsComponent implements OnInit {
   planets: Planets[];
 
-  constructor(private planetsService: PlanetsService) {}
+  constructor(private apiService: ApiService) {}
 
   ngOnInit() {
     this.getPlanets();
   }
 
   getPlanets() {
-    this.planetsService.all().subscribe((response: any) => {
+    this.apiService.all('planets').subscribe((response: any) => {
       const allPlanets: Planets[] = response.results;
       this.planets = allPlanets;
     });
