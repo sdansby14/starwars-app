@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+
+html {
+  text-decoration: none;
+  list-style: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+.app-content {
+  width: 70%;
+  margin: 0 auto 1em auto;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  width: 70%;
+  background-color: white;
+  margin: 0 auto 1em auto;
+  padding: 1em;
+}
+
+.btn {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 0.25em 0.125em;
+  cursor: pointer;
+  background-color: #555555;
+}
+
+.btn:hover {
+  box-shadow: 0 0.875em 1.375em 0 rgba(0, 0, 0, 0.2);
+}
